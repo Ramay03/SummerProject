@@ -9,7 +9,7 @@ import { logoutRedux } from "../redux/userSlice";
 import { toast } from 'react-hot-toast';
 
 const Header = () => {
-  const navigate = useNavigate();
+
   const [showOptions, setShowOptions] = useState(false)
   const userData = useSelector((state)=>state.user)
   // console.log("USERDATA", userData)
@@ -25,6 +25,8 @@ const Header = () => {
     toast("Logout successfully")
   }
 
+  const cartItemNumber = useSelector((state)=>state.product.cartItem)
+
   return (
     <header className="fixed shadow-md w-full h-16 px-2 md:px-4 z-50 bg-slate-200">
       {/* Desktop  */}
@@ -36,10 +38,10 @@ const Header = () => {
 
         <div className='flex items-center gap-4 md:gap-6'>
           <nav className='flex gap-4 text-1xl text-blue-500 md:gap-7 '>
-            <Link to={""}>Home</Link>
-            <Link to={"product"}>Products</Link>
-            <Link to={"about"}>About</Link>
-            <Link to={"contact"}>Contact</Link>
+            <Link to={""} className='px-2 py-1'>Home</Link>
+            <Link to={"product"} className='px-1 py-1'>Products</Link>
+            <Link to={"about"} className='px-1 py-1'>About</Link>
+            <Link to={"contact"} className='px-1 py-1'>Contact</Link>
           </nav>
 
 
@@ -62,9 +64,9 @@ const Header = () => {
             { userData.Name ? 
               ( <div className='flex items-center gap-4 md:gap-6'> 
                   <div className='text-2xl text-blue-500 relative cursor-pointer'>
-                    <BsCart />
+                    <Link to={"cart"}> <BsCart /></Link>
                     <div className='absolute -top-1.5 -right-1.5 text-blue-900 h-4 w-4 rounded-full m-0 p-0 text-sm text-center '>
-                      0
+                      {cartItemNumber.length}
                     </div>  
                   </div>
                   <div onClick={handleshowOptions}>
