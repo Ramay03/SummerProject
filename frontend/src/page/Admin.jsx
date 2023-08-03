@@ -12,6 +12,7 @@ const Admin = () => {
     offer:"",
     image: null,
     category: "",
+    searchword: "",
     stock: false,
   });
 
@@ -152,6 +153,22 @@ const Admin = () => {
             type="text"
             name="category"
             value={formData.category}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="mb-1">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-1"
+            htmlFor="searchword"
+          >
+            Search Word:
+          </label>
+          <input
+            className="appearance-none border rounded w-full py-1 px-1 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            name="searchword"
+            value={formData.searchword}
             onChange={handleChange}
           />
         </div>

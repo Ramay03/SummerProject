@@ -1,9 +1,8 @@
-import { React, useRef } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import HomeCard from "../component/HomeCard";
-import CategoryCard from "../component/CategoryCard";
-import { GrNext, GrPrevious } from "react-icons/gr";
 import CategoryWise from "../component/CategoryWise";
+import CategoryCard from "../component/CategoryCard";
 
 const Home = () => {
   const productData = useSelector((state) => state.product.productList);
@@ -17,42 +16,32 @@ const Home = () => {
     DataByCategory[item.category].push(item);
   });
 
+  const keyWord = "best";
+  const bestSeller = productData.filter((item) =>
+    item.searchword.toLowerCase().includes(keyWord)
+  );
+
   return (
-    <div className="p-2 md:p-4 bg-slate-200 ">
-      <div className="flex flex-wrap gap-5 items-center justify-center">
-        {productData[0] &&
-          productData.map((item) => {
-            return (
-              <HomeCard
-                id={item._id}
-                name={item.name}
-                price={item.price}
-                quantity={item.quantity}
-                mrp={item.mrp}
-                offer={item.offer}
-                image={item.image}
-                category={item.category}
-                stock={item.stock}
+    <>
+      <div className="p-2 md:p-4 bg-slate-200">
+
+        <div className="">
+          <CategoryWise categoryProduct={bestSeller} category={"Best Seller"} />
+        </div>
+
+        <div className="">
+          {Object.keys(DataByCategory).map((category) => (
+            <div className="mt-4">
+              <CategoryWise
+                categoryProduct={DataByCategory[category]}
+                category={category}
               />
-            );
-          })}
+            </div>
+          ))}
+        </div>
       </div>
-
-      <div className="">
-        {Object.keys(DataByCategory).map((category) => (
-          <div className="mt-4">
-            <CategoryWise
-              categoryProduct = {DataByCategory[category]}
-              category = {category}
-            />
-          </div>
-        ))}
-      </div>
-
-    </div>
+    </>
   );
 };
 
 export default Home;
-
-

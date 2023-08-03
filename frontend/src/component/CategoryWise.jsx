@@ -15,7 +15,7 @@ const CategoryWise = ({ categoryProduct, category}) => {
   return (
     <div>
       <div className="flex w-full items-center">
-        <h2 className="font-bold text-2xl text-slate-800 mb-4"> {category} </h2>
+        <h2 className="font-bold text-2xl text-slate-800 mb-2"> {category} </h2>
         <div className="ml-auto flex gap-4">
           <button
             onClick={preveProduct}
@@ -43,7 +43,10 @@ const CategoryWise = ({ categoryProduct, category}) => {
                   id={el._id}
                   name={el.name}
                   category={el.category}
+                  offer={el.offer}
+                  quantity={el.quantity}
                   price={el.price}
+                  mrp={el.mrp}
                   image={el.image}
                 />
               );

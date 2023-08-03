@@ -91,7 +91,7 @@ const Cart = () => {
               </p>
             </div>
             <button className="bg-red-500 w-full text-lg font-bold py-2 text-white" onClick={handlePayment}>
-              Payment
+              Proceed for order
             </button>
           </div>
         </div>

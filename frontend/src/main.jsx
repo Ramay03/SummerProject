@@ -13,6 +13,7 @@ import Register from './page/Register'
 import Profile from './page/Profile'
 import Admin from './page/Admin'
 import Cart from './page/Cart'
+import Search from './page/Search'
 import { store } from './redux/index'
 import { Provider } from 'react-redux'
 
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
         <Route path='register' element = {<Register/>}/>
         <Route path='profile' element = {<Profile/>}/>
         <Route path='admin' element = {<Admin/>}/>
+        <Route path='search' element = {<Search/>}/>
     </Route>
   )
 )

@@ -26,7 +26,7 @@ function App() {
       <Toaster/>
       <div>
         <Header />
-        <main className="pt-16 bg-slate-500 min-h-[calc(100vh)]">
+        <main className="pt-14 min-h-[calc(100vh)]">
           <Outlet />
         </main>
       </div>

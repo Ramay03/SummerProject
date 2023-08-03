@@ -109,6 +109,7 @@ const productSchema = mongoose.Schema({
   offer: String,
   image: String,
   category: String,
+  searchword: String,
   stock: Boolean,
 });
 
@@ -119,6 +120,7 @@ app.post("/admin", async (req, res) => {
   const save = await data.save();
   res.send({ message: "Product is saved successfully", alert: true });
 });
+
 
 app.get("/product", async (req,res)=>{
   const data = await ProductModel.find({})
