@@ -19,6 +19,7 @@ export const productSlice = createSlice({
       if (check) {
         toast("Item is already in cart");
       } else {
+        
         toast("Item is added");
         const total = action.payload.price;
         state.cartItem = [
@@ -31,7 +32,7 @@ export const productSlice = createSlice({
       toast("Item is deleted");
       const index = state.cartItem.findIndex((el) => el._id === action.payload);
       state.cartItem.splice(index, 1);
-    //   console.log(index);
+      //   console.log(index);
     },
     increaseQty: (state, action) => {
       const index = state.cartItem.findIndex((el) => el._id === action.payload);
@@ -55,8 +56,7 @@ export const productSlice = createSlice({
         const total = price * qtyDec;
 
         state.cartItem[index].total = total;
-      }
-      else {
+      } else {
         state.cartItem.splice(index, 1);
       }
     },

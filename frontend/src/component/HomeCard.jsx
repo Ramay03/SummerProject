@@ -10,7 +10,7 @@ const HomeCard = ({id,name,price,quantity,mrp,offer,image,category,stock}) => {
   const user = useSelector(state => state.user)
   // console.log("USER: ",user)
   const handleAddCartProduct = (e) => {
-    if(user.Mobile){
+    // if(user.Mobile){
       dispatch(addCartItem({
         _id : id,
         name : name,
@@ -20,13 +20,13 @@ const HomeCard = ({id,name,price,quantity,mrp,offer,image,category,stock}) => {
         image : image,
         offer : offer
       }))
-    }
-    else{
-      toast("Please Login")
-      setTimeout(()=>{
-        navigate("/login")
-      },1000)
-    }
+    // }
+    // else{
+    //   toast("Please Login")
+    //   setTimeout(()=>{
+    //     navigate("/login")
+    //   },1000)
+    // }
   };
 
   return (

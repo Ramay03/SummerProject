@@ -3,7 +3,7 @@ import { GrNext, GrPrevious } from "react-icons/gr";
 import CategoryCard from "../component/CategoryCard";
 import HomeCard from "./HomeCard";
 
-const CategoryWise = ({ categoryProduct, category}) => {
+const CategoryWise = ({ categoryProduct, category }) => {
   const slideProductRef = useRef();
   const nextProduct = () => {
     slideProductRef.current.scrollLeft += 400;
@@ -11,7 +11,7 @@ const CategoryWise = ({ categoryProduct, category}) => {
   const preveProduct = () => {
     slideProductRef.current.scrollLeft -= 400;
   };
-  
+
   return (
     <div>
       <div className="flex w-full items-center">
@@ -36,22 +36,21 @@ const CategoryWise = ({ categoryProduct, category}) => {
         className="flex gap-5 overflow-scroll scrollbar-none scroll-smooth transition-all"
         ref={slideProductRef}
       >
-        {categoryProduct.map((el) => {
-              return (
-                <CategoryCard
-                  key={el._id}
-                  id={el._id}
-                  name={el.name}
-                  category={el.category}
-                  offer={el.offer}
-                  quantity={el.quantity}
-                  price={el.price}
-                  mrp={el.mrp}
-                  image={el.image}
-                />
-              );
-            })
-        }
+        {categoryProduct.map((item) => {
+          return (
+            <CategoryCard
+              id={item._id}
+              name={item.name}
+              price={item.price}
+              quantity={item.quantity}
+              mrp={item.mrp}
+              offer={item.offer}
+              image={item.image}
+              category={item.category}
+              stock={item.stock}
+            />
+          );
+        })}
       </div>
     </div>
   );

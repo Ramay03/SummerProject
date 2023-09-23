@@ -61,7 +61,7 @@ function Register() {
         toast(ResData.message);
         if (ResData.alert) {
           // If not present already
-          navigate("/");
+          navigate("/login");
         } else {
           navigate("/register");
         }
@@ -75,8 +75,8 @@ function Register() {
   };
 
   return (
-    <div className="p-5 md:p-20">
-      <div className="w-full max-w-sm bg-slate-200 m-auto flex flex-col p-4">
+    <div className="py-10">
+      <div className="w-full max-w-sm bg-slate-300 m-auto flex flex-col p-4">
         <h1 className="text-center text-2xl font-bold">Register</h1>
 
         <form className="w-full py-3 flex flex-col" onSubmit={handleOnSubmit}>
@@ -87,7 +87,7 @@ function Register() {
             value={data.Name}
             onChange={handleOnChange}
             placeholder={"Name"}
-            className="mt-3 w-full placeholder-blue-500 bg-slate-300 px-2 py-1 rounded focus-within:outline-slate-600"
+            className="mt-3 w-full placeholder-blue-500 bg-slate-100 px-2 py-1 rounded focus-within:outline-slate-600"
           />
           <input
             type="number"
@@ -96,7 +96,7 @@ function Register() {
             value={data.Mobile}
             onChange={handleOnChange}
             placeholder={"Mobile Number"}
-            className="mt-3 w-full placeholder-blue-500 bg-slate-300 px-2 py-1 rounded focus-within:outline-slate-600"
+            className="mt-3 w-full placeholder-blue-500 bg-slate-100 px-2 py-1 rounded focus-within:outline-slate-600"
           />
           <input
             type={"email"}
@@ -105,10 +105,10 @@ function Register() {
             value={data.Email}
             onChange={handleOnChange}
             placeholder={"Email"}
-            className="mt-3 w-full placeholder-blue-500 bg-slate-300 px-2 py-1 rounded focus-within:outline-slate-600"
+            className="mt-3 w-full placeholder-blue-500 bg-slate-100 px-2 py-1 rounded focus-within:outline-slate-600"
           />
 
-          <div className="mt-3 flex px-2 py-1 bg-slate-300 rounded focus-within:border focus-within:border-slate-600">
+          <div className="mt-3 flex px-2 py-1 bg-slate-100 rounded focus-within:border focus-within:border-slate-600">
             <input
               type={showPassword ? "text" : "password"}
               id="password"
@@ -116,7 +116,7 @@ function Register() {
               value={data.Password}
               onChange={handleOnChange}
               placeholder="Enter Password"
-              className="w-full bg-slate-300 border-none outline-none placeholder-blue-500"
+              className="w-full bg-slate-100 border-none outline-none placeholder-blue-500"
             />
             <span
               className="flex text-xl cursor-pointer"
@@ -126,7 +126,7 @@ function Register() {
             </span>
           </div>
 
-          <div className="flex px-2 py-1 bg-slate-300 rounded mt-3 focus-within:border focus-within:border-slate-600">
+          <div className="flex px-2 py-1 bg-slate-100 rounded mt-3 focus-within:border focus-within:border-slate-600">
             <input
               type={showConfirmPassword ? "text" : "password"}
               id="confirmpassword"
@@ -134,13 +134,13 @@ function Register() {
               placeholder="Confirm Password"
               value={data.ConfirmPassword}
               onChange={handleOnChange}
-              className="w-full bg-slate-300 border-none outline-none placeholder-blue-500"
+              className="w-full bg-slate-100 border-none outline-none placeholder-blue-500"
             />
             <span
               className="flex text-xl cursor-pointer"
               onClick={handleShowConfirmPassword}
             >
-              {showConfirmPassword ? <BiHide /> : <BiShow />}
+              {showConfirmPassword ? <BiShow /> : <BiHide />}
             </span>
           </div>
 

@@ -13,23 +13,31 @@ import Register from './page/Register'
 import Profile from './page/Profile'
 import Admin from './page/Admin'
 import Cart from './page/Cart'
+import Address from './page/Address'
+import Orderdetails from './page/OrderDetails'
 import Search from './page/Search'
 import { store } from './redux/index'
 import { Provider } from 'react-redux'
+import MyOrder from './page/MyOrder'
+import { Orders } from './page/Orders'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path = '/' element = {<App/>}>
         <Route index element = {<Home/>}/>
+        <Route path='login' element = {<Login/>}/>
+        <Route path='register' element = {<Register/>}/>
         <Route path='product' element = {<Product/>}/>
         <Route path='about' element = {<About/>}/>
         <Route path='contact' element = {<Contact/>}/>
         <Route path='cart' element = {<Cart/>}/>
-        <Route path='login' element = {<Login/>}/>
-        <Route path='register' element = {<Register/>}/>
+        <Route path='address' element = {<Address/>}/>
+        <Route path='orderdetails' element = {<Orderdetails/>}/>
+        <Route path='myorder' element = {<MyOrder/>}/>
         <Route path='profile' element = {<Profile/>}/>
-        <Route path='admin' element = {<Admin/>}/>
         <Route path='search' element = {<Search/>}/>
+        <Route path='admin' element = {<Admin/>}/>
+        <Route path='orders' element = {<Orders/>}/>
     </Route>
   )
 )

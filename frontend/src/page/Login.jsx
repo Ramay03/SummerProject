@@ -65,8 +65,8 @@ const Login = () => {
   };
 
   return (
-    <div className="p-5 md:p-20">
-      <div className="w-full max-w-sm bg-slate-200 m-auto flex flex-col p-4">
+    <div className="m-auto py-20">
+      <div className="w-full max-w-sm bg-slate-300 m-auto flex flex-col p-4">
         <h1 className="text-center text-2xl font-bold">Login</h1>
         <div className=""></div>
 
@@ -78,10 +78,10 @@ const Login = () => {
             value={data.Mobile}
             onChange={handleOnChange}
             placeholder={"Mobile"}
-            className="mt-3 w-full placeholder-blue-500 bg-slate-300 px-2 py-1 rounded focus-within:outline-slate-600"
+            className="mt-3 w-full placeholder-blue-500 bg-slate-100 px-2 py-1 rounded focus-within:outline-slate-600"
           />
 
-          <div className="mt-3 flex px-2 py-1 bg-slate-300 rounded focus-within:border focus-within:border-slate-600">
+          <div className="mt-3 flex px-2 py-1 bg-slate-100 rounded focus-within:border focus-within:border-slate-600">
             <input
               type={showPassword ? "text" : "password"}
               id="password"
@@ -89,13 +89,13 @@ const Login = () => {
               value={data.Password}
               onChange={handleOnChange}
               placeholder="Password"
-              className="w-full bg-slate-300 border-none outline-none placeholder-blue-500"
+              className="w-full bg-slate-100 border-none outline-none placeholder-blue-500"
             />
             <span
               className="flex text-xl cursor-pointer"
               onClick={handleShowPassword}
             >
-              {showPassword ? <BiHide /> : <BiShow />}
+              {showPassword ? <BiShow /> : <BiHide />}
             </span>
           </div>
 
@@ -106,7 +106,7 @@ const Login = () => {
 
         <p className="text-center text-sm mt-2 ">
           Do not have an account ?{" "}
-          <Link to={"/register"} className="text-red-500 underline">
+          <Link to={"/register"} className="text-red-500 text-[16px] underline">
             Register
           </Link>
         </p>

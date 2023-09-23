@@ -33,7 +33,7 @@ const Search = () => {
   };
 
   return (
-    <div className="h-screen bg-slate-200">
+    <div className="bg-slate-200">
       <div className="search-header ">
         <div className="search-bar">
           <input

@@ -11,7 +11,6 @@ import { toast } from "react-hot-toast";
 import { HiOutlineSearch } from "react-icons/hi";
 
 const Header = () => {
-
   const [keyword, setKeyword] = useState("");
 
   const [showOptions, setShowOptions] = useState(false);
@@ -43,14 +42,25 @@ const Header = () => {
           {/* <div className=''> Search </div> */}
           <nav className="flex gap-4 text-1xl text-blue-500 md:gap-7 ">
             <Link to={""} className="px-2 py-1">
-              Home
+              Products
             </Link>
             {/* <Link to={"product"} className="px-1 py-1">
               Products
             </Link> */}
             <Link to={"search"} className="px-1 py-1">
-              Search
+              Find
             </Link>
+
+            <div className="text-2xl text-blue-500 relative cursor-pointer">
+              <Link to={"cart"}>
+                {" "}
+                <BsCart />
+              </Link>
+              <div className="absolute -top-1.5 -right-1.5 text-blue-900 h-4 w-4 rounded-full m-0 p-0 text-sm text-center ">
+                {cartItemNumber.length}
+              </div>
+            </div>
+
             {/* <Link to={"about"} className="px-1 py-1">
               About
             </Link>
@@ -75,7 +85,7 @@ const Header = () => {
           <div>
             {userData.Name ? (
               <div className="flex items-center gap-4 md:gap-6">
-                <div className="text-2xl text-blue-500 relative cursor-pointer">
+                {/* <div className="text-2xl text-blue-500 relative cursor-pointer">
                   <Link to={"cart"}>
                     {" "}
                     <BsCart />
@@ -83,16 +93,18 @@ const Header = () => {
                   <div className="absolute -top-1.5 -right-1.5 text-blue-900 h-4 w-4 rounded-full m-0 p-0 text-sm text-center ">
                     {cartItemNumber.length}
                   </div>
-                </div>
+                </div> */}
                 <div onClick={handleshowOptions}>
                   <div className="text-2xl text-blue-500 relative cursor-pointer">
                     <AiOutlineUser />
                   </div>
                   {showOptions && (
-                    <div className="absolute right-2 bg-white py-2  shadow drop-shadow-md flex flex-col min-w-[120px] text-center">
-                      <Link to={"profile"}>Profile</Link>
-                      <Link to={"setting"}>Setting</Link>
-                      <p onClick={handleLogout}>Logout</p>
+                    <div className="absolute right-2 bg-white pt-2 pb-2 mt-4 shadow drop-shadow-md flex flex-col min-w-[120px] text-center">
+                      <div className="">Hi, {userData.Name}</div>
+                      {/* <Link to={"profile"} className="shadow drop-shadow-md pb-1">Profile</Link> */}
+                      <Link to={"myorder"} className="hover:shadow-md p-1">My orders</Link>
+                      {/* <Link to={"setting"}>Setting</Link> */}
+                      <p onClick={handleLogout} className="hover:shadow-md p-1">Logout </p>
                     </div>
                   )}
                 </div>

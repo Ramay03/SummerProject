@@ -73,7 +73,7 @@ const Admin = () => {
     <div className="flex justify-center items-center h-screen">
       <form
         onSubmit={handleSubmit}
-        className="w-1/2 bg-white shadow-md rounded px-4 pt-6 pb-4"
+        className="w-1/2 bg-white shadow-2xl rounded px-4 pt-6 pb-4"
       >
         <h1 className="text-center text-2xl font-bold">New Product</h1>
 
@@ -142,7 +142,21 @@ const Admin = () => {
         </div>
 
         <div className="mb-1">
-          <label
+
+          <label className="text-gray-700 text-sm font-bold mb-1" htmlFor='category'>Category : </label>
+          <select className='bg-slate-200 p-1 my-1' id='category' name='category' onChange={handleChange} value={formData.category}>
+            <option value={"Other"}>Other</option>
+            <option value={"Dry Fruit"}>Dry Fruit</option>
+            <option value={"Grains"}>Grains</option>
+            <option value={"Oil"}>Oil</option>
+            <option value={"Soap"}>Soap</option>
+            <option value={"Detergent"}>Detergent</option>
+            <option value={"Tea"}>Tea</option>
+            <option value={"Chocalate"}>Chocalate</option>
+          </select>
+        </div>
+
+          {/* <label
             className="block text-gray-700 text-sm font-bold mb-1"
             htmlFor="category"
           >
@@ -154,8 +168,7 @@ const Admin = () => {
             name="category"
             value={formData.category}
             onChange={handleChange}
-          />
-        </div>
+          /> */}
 
         <div className="mb-1">
           <label

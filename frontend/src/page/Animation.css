@@ -1,0 +1,62 @@
+
+.animated-line {
+  width: 100%;
+  height: 3px;
+  display: flex;
+  background-color: #ccc; 
+  position: relative;
+}
+
+
+.confirmed {
+  height: 100%;
+  background-color: #37de32; /* Final color of the line */
+  position: absolute;
+  animation: colorAnimation 1s linear forwards;
+  animation-delay: 0s; 
+}
+
+.shipped {
+  height: 100%;
+  background-color: #37de32; /* Final color of the line */
+  position: absolute;
+  animation: colorAnimation 1s linear forwards;
+  animation-delay: 0s; 
+}
+
+.onway {
+  height: 100%;
+  background-color: #37de32; /* Final color of the line */
+  position: absolute;
+  animation: colorAnimation 1s linear forwards;
+  animation-delay: 1s; 
+}
+
+.delivered {
+  height: 100%;
+  background-color: #37de32; /* Final color of the line */
+  position: absolute;
+  animation: colorAnimation 1s linear forwards;
+  animation-delay: 2s; 
+}
+
+.cancelled {
+  height: 100%;
+  background-color: #b62825; /* Final color of the line */
+  position: absolute;
+  animation: colorAnimation 1s linear forwards;
+  animation-delay: 0s; 
+}
+
+
+@keyframes colorAnimation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+
